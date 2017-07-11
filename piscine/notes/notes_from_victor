@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/29 18:44:01 by fpolyans          #+#    #+#             */
+/*   Updated: 2017/07/02 02:48:55 by fpolyans         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+void	ft_strlen(char *str)
+{
+	char a;
+	char *str;
+	char **ptr;
+		
+	a = 'z';
+	str = &a;
+	ptr = &str;
+
+	print (*ptr)
+
+		ptr		==	&str	== &&a
+		*ptr	==	str	//	pointer is dereferenced only once. which gives us the value held by the first variable pointed to --> 'str' == &a
+		**ptr	==	*str	==	a	//	pointer is dereferenced twice. which gives us the value held by the second variable pointe to --> '*str' --> 'a' == 'z'
+
+	ft_putchar(ptr)		-->		void	ft_putchar(char **ref);
+	ft_putchar(&&a)
+	
+
+	char str[2];		//	<--	An array of variables. Is an actual char variable.
+	char *ptr[2];		//	<--	An array of pointers.
+	ft_putchar(str[1])	//	<-- Is sending the value of 'str[1]' as a parameter to the function.
+	ft_putchar(&str[1])	//	<-- Is sending the address of 'str[1]' as a parameter to the function.
+
+	
+	void	hellsing(unsigned int a)
+	{
+		if (a > 1)
+		{
+			hellsing(a-1);
+		}
+
+	}
+
+
+}
