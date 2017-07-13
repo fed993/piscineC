@@ -6,7 +6,7 @@
 /*   By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 20:53:30 by fpolyans          #+#    #+#             */
-/*   Updated: 2017/07/12 22:17:16 by fpolyans         ###   ########.fr       */
+/*   Updated: 2017/07/12 23:15:19 by fpolyans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,20 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 {	
 	t_list	*end_link;
 
-	while ((**begin_list).next != 0)
+	if (*begin_list)
 	{
-		(*begin_list) = (**begin_list).next;
+		while ((**begin_list).next != 0)
+		{
+			(*begin_list) = (**begin_list).next;
+		}
+		end_link = ft_create_elem(data);
+		(**begin_list).next = end_link;
 	}
-	end_link = ft_create_elem(data);
+	else
+	{
+		end_link = ft_create_elem(data);
+		(**begin_list).next = end_link;
+	}
 }
 
 t_list* ft_create_elem(void* data)
