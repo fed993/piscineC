@@ -13,37 +13,45 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#define MB_SIZE 1048576
+#define KB_SIZE 1024
+
 
 void	ft_putchar(char c);
 void	ft_putstr(char *c);
 void	ft_putnbr(int i);
 
-#define MB_BUF_SIZE 1048576
-#define KB_BUF_SIZE 1024
-
 int		main(int ac, char **av)
 {
 	int		fd;
 	int		buf_loc;
-	char	buffer[((KB_BUF_SIZE) * 4) + 1];
+	char	buffer[(KB_SIZE + 1)];
 
 	fd = open(av[ac - 1], O_RDWR);
-	if (fd == -1)
+	if (ac < 2)
+		ft_putstr("File name missing.\n");
+	if (ac > 2)
+		ft_putstr("Too many arguments.\n");	
+	else
 	{
-		ft_putstr("open() failed\n");
-		return(1);
-	}
-	buf_loc = read(fd, buffer, KB_BUF_SIZE); 
-	while (buf_loc)
-	{
-		buffer[buf_loc] = '\0';
-		ft_putstr(buffer);
-		buf_loc = read(fd, buffer, KB_BUF_SIZE);
-	}
-	if (buf_loc == -1)
-	{
-		ft_putstr("read() failed\n");
-		return (1);
+		if (fd == -1)
+		{
+			ft_putstr("open() failed\n");
+			return(1);
+		}
+		buf_loc = read(fd, buffer, KB_SIZE); 
+		while (buf_loc)
+		{
+			buffer[buf_loc] = '\0';
+			ft_putstr(buffer);
+			buf_loc = read(fd, buffer, KB_SIZE);
+		}
+		if (buf_loc == -1)
+		{
+			ft_putstr("read() failed\n");
+			return (1);
+		}
+		return 0;
 	}
 	return 0;
 }

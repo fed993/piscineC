@@ -18,6 +18,10 @@ OBJECTS = ft_putchar.o ft_putstr.o \
 		  ft_strcmp.o ft_strlen.o \
 		  ft_swap.o ft_putnbr.o
 
+MAIN = main.c
+
+DEBUG_ARGS = main.c
+
 HEADERS = includes
 
 FLAGS = -Wall -Wextra -Werror
@@ -27,6 +31,10 @@ LIBRARY = libft.a
 all:
 	gcc $(FLAGS) -I$(HEADERS) -c $(SOURCES) 
 	ar rc $(LIBRARY) $(OBJECTS)
+
+debug:
+	gcc -g $(FLAGS) -I$(HEADERS) $(SOURCES) $(MAIN)
+	gdb ./a.out $(DEBUG_ARGS)
 
 clean:
 	rm -rf $(OBJECTS)
