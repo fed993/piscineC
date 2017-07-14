@@ -6,7 +6,7 @@
 /*   By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/03 05:57:40 by fpolyans          #+#    #+#             */
-/*   Updated: 2017/07/13 19:13:46 by fpolyans         ###   ########.fr       */
+/*   Updated: 2017/07/13 19:23:10 by fpolyans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	ft_putnbr(int nb)
 {
 	int		temp_nb;
 	int		array_index;
-	char	billion_digit;
 	char	array[ft_determine_int_length(nb)];
 
 	temp_nb = nb;

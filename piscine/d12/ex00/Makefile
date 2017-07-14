@@ -6,7 +6,7 @@
 #    By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/11 00:00:42 by fpolyans          #+#    #+#              #
-#    Updated: 2017/07/13 19:18:03 by fpolyans         ###   ########.fr        #
+#    Updated: 2017/07/13 19:24:47 by fpolyans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SOURCES = srcs/ft_putchar.c srcs/ft_putstr.c \
 OBJECTS = ft_putchar.o ft_putstr.o \
 		  ft_strcmp.o ft_strlen.o \
 		  ft_swap.o ft_putnbr.o
+
+MAIN = main.c
 
 HEADERS = includes
 
@@ -29,8 +31,7 @@ all:
 	ar rc $(LIBRARY) $(OBJECTS)
 
 debug:
-	gcc -g $(FLAGS) -I$(HEADERS) -c $(SOURCES)
-	ar rc $(LIBRARY) $(OBJECTS)
+	gcc -g $(FLAGS) -I$(HEADERS) -c $(SOURCES) $(MAIN)
 
 clean:
 	rm -rf $(OBJECTS)
