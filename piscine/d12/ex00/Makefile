@@ -20,6 +20,8 @@ OBJECTS = ft_putchar.o ft_putstr.o \
 
 MAIN = main.c
 
+DEBUG_ARGS = main.c
+
 HEADERS = includes
 
 FLAGS = -Wall -Wextra -Werror
@@ -31,7 +33,8 @@ all:
 	ar rc $(LIBRARY) $(OBJECTS)
 
 debug:
-	gcc -g $(FLAGS) -I$(HEADERS) -c $(SOURCES) $(MAIN)
+	gcc -g $(FLAGS) -I$(HEADERS) $(SOURCES) $(MAIN)
+	gdb ./a.out $(DEBUG_ARGS)
 
 clean:
 	rm -rf $(OBJECTS)
