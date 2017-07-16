@@ -6,7 +6,7 @@
 /*   By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 23:32:36 by fpolyans          #+#    #+#             */
-/*   Updated: 2017/07/16 03:07:41 by fpolyans         ###   ########.fr       */
+/*   Updated: 2017/07/16 03:14:30 by fpolyans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*ft_stack_head(char *str, int i, int p_ct, t_list *p_stk, char *out)
 	i = 0;
 	p_ct = 0;
 	p_stk = (t_list*)malloc(sizeof(t_list));
-	while (str[i] != 0)
+	while (str[i] != '\0')
 	{
 		if (str[i] == 40)
 		{
