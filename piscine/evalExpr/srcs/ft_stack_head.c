@@ -6,7 +6,7 @@
 /*   By: fpolyans <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 23:32:36 by fpolyans          #+#    #+#             */
-/*   Updated: 2017/07/16 03:14:30 by fpolyans         ###   ########.fr       */
+/*   Updated: 2017/07/16 03:40:12 by fpolyans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ char	*this_function_provides_additional_space(char *str)
 int		main(int ac, char **av)
 {
 	printf("%s", this_function_provides_additional_space(av[1]));
+	return (1);
 }
