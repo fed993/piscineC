@@ -1,4 +1,5 @@
 #include "ft_list.h"
+#define NULL (void *)0
 
 void	ft_list_push_front(t_list **begin_list, void *data)
 {

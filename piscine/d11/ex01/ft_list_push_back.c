@@ -1,4 +1,5 @@
 #include "ft_list.h"
+#define NULL (void *)0
 
 void	ft_list_push_back(t_list **begin_list, void *data)
 {
@@ -8,7 +9,6 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 		if(*begin_list == NULL)
 		{
 				*begin_list = link;
-				link->data = data;
 		}
 		else
 		{
@@ -17,6 +17,5 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 						(*begin_list) = (*begin_list)->next;
 				}
 				(*begin_list)->next = link;
-				link->data = data;
 		}
 }

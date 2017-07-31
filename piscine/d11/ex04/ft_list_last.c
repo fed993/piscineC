@@ -1,4 +1,5 @@
 #include "ft_list.h"
+#define NULL (void *)0
 
 t_list	*ft_list_last(t_list *begin_list)
 {
